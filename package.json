@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "bcommands.helloWorld",
-        "title": "Hello World"
+        "command": "bcommands.gitDeleteLocalBranches",
+        "title": "Git Delete Local Branches That Are Not In Remote"
       }
     ]
   },
