@@ -2,7 +2,7 @@
   "name": "bcommands",
   "displayName": "BCommands",
   "description": "Summary of utility commands",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.97.0"
   },
@@ -16,9 +16,40 @@
     "commands": [
       {
         "command": "bcommands.gitDeleteLocalBranches",
-        "title": "Git Delete Local Branches That Are Not In Remote"
+        "title": "Git: Delete Local Branches That Are Not In Remote"
+      },
+      {
+        "command": "bcommands.changeEnv",
+        "title": "Env: Change env local"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "B-Commands",
+      "properties": {
+        "bCommands.envs": {
+          "type": "object",
+          "title": "Envs",
+          "properties": {
+            "envs": {
+              "type": "string",
+              "default": "env.dev",
+              "description": "A list of name envs"
+            },
+            "default": {
+              "type": "string",
+              "default": "env.dev",
+              "description": "A list of name envs"
+            },
+            "from": {
+              "type": "string",
+              "default": "./envs",
+              "description": "The folder store file envs"
+            }
+          }
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",

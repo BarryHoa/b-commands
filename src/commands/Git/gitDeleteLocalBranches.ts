@@ -5,7 +5,7 @@ const gitDeleteLocalBranches = () => {
     "bcommands.gitDeleteLocalBranches",
     () => {
       const terminal = vscode.window.createTerminal(
-        "Git Delete Local Branches That Are Not In Remote"
+        "Git: Delete Local Branches That Are Not In Remote"
       );
       terminal.sendText("git fetch -p");
       terminal.sendText(
