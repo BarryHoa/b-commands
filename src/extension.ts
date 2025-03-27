@@ -3,6 +3,7 @@
 import * as vscode from "vscode";
 import gitDeleteLocalBranches from "./commands/Git/gitDeleteLocalBranches";
 import changeEnv from "./commands/Env/changeEnv";
+// import jenskinBuild from "./commands/Jenskin/jenskin";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -17,9 +18,14 @@ export function activate(context: vscode.ExtensionContext) {
   // The commandId parameter must match the command field in package.json
   const disposableGitDeleteLocalBranches = gitDeleteLocalBranches();
   const disposableEnvChange = changeEnv(outputChannel);
+  // const disposableJenskin = jenskinBuild(outputChannel);
 
   context.subscriptions.push(
-    ...[disposableGitDeleteLocalBranches, disposableEnvChange]
+    ...[
+      disposableGitDeleteLocalBranches,
+      disposableEnvChange,
+      // disposableJenskin,
+    ]
   );
 }
 
